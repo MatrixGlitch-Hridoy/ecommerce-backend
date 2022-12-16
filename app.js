@@ -18,7 +18,7 @@ morganBody(app, {
 
 // Route Imports
 const user = require("./routes/user.route");
-app.use("/api/v1/user", user);
+app.use("/api/v1", user);
 
 // 404 error handler
 // app.use((req, res, next) => {
