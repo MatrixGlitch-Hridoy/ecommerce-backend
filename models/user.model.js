@@ -45,6 +45,18 @@ const userSchema = new mongoose.Schema({
     type: String,
     default: "user",
   },
+  IsBlocked: {
+    type: Boolean,
+    default: false,
+  },
+  cart: {
+    type: Array,
+    default: [],
+  },
+  address: {
+    type: String,
+  },
+  wishlist: [{ type: mongoose.Schema.Types.ObjectId, ref: "Product" }],
   createdAt: {
     type: Date,
     default: Date.now,
