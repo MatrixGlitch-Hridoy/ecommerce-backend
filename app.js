@@ -1,10 +1,12 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const errorMiddleware = require("./middlewares/error");
+const cookieParser = require("cookie-parser");
+const errorMiddleware = require("./middlewares/error.middleware");
 const morganBody = require("morgan-body");
 const app = express();
 
 app.use(express.json());
+app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 morganBody(app, {
